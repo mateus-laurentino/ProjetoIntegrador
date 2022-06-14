@@ -1,0 +1,107 @@
+/*Geral*/
+body, html{
+    padding: 0rem;
+    margin: 0rem;
+    height: 100%;
+}
+
+label{
+    font-size: 18px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+/*fim Geral*/
+
+/*Cabeçalho*/
+.cabecalho{
+    background-color: rgb(206, 206, 206);
+    height: 3rem;
+}
+/*fim Cabeçalho*/
+
+/*Conteudo*/
+.conteudo{
+    flex: 1 0 auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    height: 1rem;
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.conteudo .conteudo-principal{
+    background-color: rgb(206, 206, 206);
+    border-radius: 1rem;
+    width: 20rem;
+    height: 20rem;
+}
+
+.logo{
+    border-radius: 360rem;
+    border: 0.2em solid black;
+    width: 100px;
+}
+
+.login{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+}
+
+.login-usuario, .login-usuario-senha, .login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-usuario-button{
+    display: flex;
+    justify-content: space-between;
+    width: 288px;
+}
+
+.btn-login-cadastro{
+    width: 130px;
+    height: 27px;
+    border-radius: 1rem;
+    background-color: rgba(191, 241, 255, 0.62);
+    border-color: #53D3F8;
+}
+.btn-login-cadastro:hover{
+    background-color: rgba(153, 233, 255, 0.62);
+}
+
+.btn-login-entrar{
+    width: 130px;
+    height: 27px;
+    border-radius: 1rem;
+    background-color: rgba(72, 255, 211, 0.44);
+    border-color: #00B98D;
+}
+.btn-login-entrar:hover{
+    background-color: rgba(30, 254, 202, 0.44);
+}
+
+.ipt-login-usuario{
+    width: 280px;
+    height: 1.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    border: none;
+}
+/*fim Conteudo*/
+
+/*Rodape*/
+.rodape{
+    flex-shrink: 0;
+    background-color: rgb(206, 206, 206);
+    height: 3rem;
+}
+/*fim Rodape*/
