@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Eventos.Application\Eventos.Application.csproj" />
+    <ProjectReference Include="..\Eventos.Domain\Eventos.Domain.csproj" />
+    <ProjectReference Include="..\Eventos.Infra\Eventos.Infra.csproj" />
+  </ItemGroup>
+
+</Project>
