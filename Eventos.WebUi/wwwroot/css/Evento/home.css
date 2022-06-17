@@ -1,37 +1,41 @@
 /*Geral*/
-body, html{
-    height: 100vh;
+body, html {
+    height: 100%;
     padding: 0rem;
     margin: 0rem;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
 }
-input{
+
+input {
     margin: 0%;
     padding: 0%;
 }
-ul{
+
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-label{
+label {
     color: #A6A6A6;
     font-size: 18px;
 }
 /*fim Geral*/
 
 /*Cabeçalho*/
-.cabecalho{
+.cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #0D0D0D;
 }
-.logo{
+
+.logo {
     width: 4rem;
     padding: 5px;
     margin: 0.5rem;
@@ -39,32 +43,33 @@ label{
     border-radius: 10rem;
 }
 
-.categoria-ul-nav{
+.categoria-ul-nav {
     display: flex;
 }
 
-.categoria-ul-nav a{
-    margin: 0.5rem;
-}
+    .categoria-ul-nav a {
+        margin: 0.5rem;
+    }
 
-.categoria-ul-nav img{
-    width: 2rem;
-}
+    .categoria-ul-nav img {
+        width: 2rem;
+    }
 
-.div-btn-login{
+.div-btn-login {
     border-left: 5px solid #161616;
 }
 
-.btn-login{
+.btn-login {
     background: #0D0D0D;
     width: 6.5rem;
     height: 6.5rem;
     border: none;
 }
-.btn-login:hover{
-    background: #161616;
-    cursor: pointer;
-}
+
+    .btn-login:hover {
+        background: #161616;
+        cursor: pointer;
+    }
 /*fim Cabeçalho*/
 
 /*Conteudo*/
@@ -77,13 +82,13 @@ label{
     padding: 0rem;
 }
 
-.conteudo-nav{
+.conteudo-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.conteudo-nav-item{
+.conteudo-nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +99,7 @@ label{
     border-radius: 0.5rem;
 }
 
-.conteudo-nav-item-img{
+.conteudo-nav-item-img {
     margin: 5%;
     width: 90%;
     height: 30%;
@@ -102,19 +107,19 @@ label{
     border-radius: 0.5rem;
 }
 
-.conteudo-nav-item-linha{
+.conteudo-nav-item-linha {
     color: white;
-    border: 0.1px solid white; 
-    border-style: dotted; 
+    border: 0.1px solid white;
+    border-style: dotted;
     width: 100%;
 }
 
-.conteudo-nav-item-desc-text{
+.conteudo-nav-item-desc-text {
     color: white;
     font-size: 15px;
 }
 
-.conteudo-nav-item-desc{
+.conteudo-nav-item-desc {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -127,23 +132,23 @@ label{
     border-radius: 0.5rem;
 }
 
-.lista-item-desc-categoria{
+.lista-item-desc-categoria {
     display: flex;
     justify-content: space-evenly;
 }
 
-.lista-desc-categoria-item{
+.lista-desc-categoria-item {
     display: flex;
     width: 15%;
 }
 
-.lista-item-desc-categoria-img{
+.lista-item-desc-categoria-img {
     width: 100%;
 }
 /*fim Conteudo*/
 
 /*Rodape*/
-.rodape{
+.rodape {
     flex-shrink: 0;
     display: flex;
     justify-content: flex-end;
@@ -152,16 +157,11 @@ label{
     padding: 0.5rem;
 }
 
-.rodape-contato{
+.rodape-contato {
     display: grid;
 }
 
-.rodape-contato-img{
+.rodape-contato-img {
     width: 1rem;
-}
-
-.rodape .lbl_cabecalho {
-    font-size: 0rem;
-    margin-bottom: 0px;
 }
 /*fim Rodape*/

@@ -1,1 +1,110 @@
-﻿<h1>teste</h1>
+﻿@using Eventos.Domain.DTOs.OutputModel
+
+@model List<EventoOutputModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="~/css/Evento/home.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo-img">
+            <img class="logo" src="../img/logo.png">
+        </div>
+        <div class="categoria-ul">
+            <ul class="categoria-ul-nav">
+                <li>
+                    <a href="#" title="Aniversario">
+                        <img src="../img/categorias/aniversario.png" alt="#">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Festival de compras">
+                        <img src="../img/categorias/Compras.png" alt="#">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Festa a fantasia">
+                        <img src="../img/categorias/fantasia.png" alt="#">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Karaoke">
+                        <img src="../img/categorias/Karaoke.png" alt="#">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Musica">
+                        <img src="../img/categorias/Musica.png" alt="#">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Teatro">
+                        <img src="../img/categorias/Teatro.png" alt="#">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="div-btn-login">
+            <input class="btn-login" type="button" value="Login">
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <ul class="conteudo-nav">
+            <li class="conteudo-nav-item">
+                <img class="conteudo-nav-item-img" src="../img/logo.png" width="75%">
+                <label class="conteudo-nav-item-linha"></label>
+                <div class="conteudo-nav-item-desc">
+                    <ul>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (EventoOutputModel evento in Model)
+                            {
+                                <li>
+                                    <label class="conteudo-nav-item-desc-text" for="">Nome:</label>
+                                    <input type="text" disabled>
+                                    <label class="conteudo-nav-item-desc-text" for="">Local:</label>
+                                    <input type="text" disabled>
+                                    <label class="conteudo-nav-item-desc-text" for="">Horario:</label>
+                                    <input type="text" disabled>
+                                    <label class="conteudo-nav-item-desc-text" for="">Espaço:</label>
+                                    <input type="text" disabled>
+                                    <label class="conteudo-nav-item-desc-text" for="">Categoria:</label>
+                                    <ul class="lista-item-desc-categoria">
+                                        <li class="lista-desc-categoria-item">
+                                            <img class="lista-item-desc-categoria-img" src="../img/categorias/aniversario.png">
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-contato">
+            <label>Contato: </label>
+            <label>
+                Mateus - (48) 9 8845-5647
+                <img class="rodape-contato-img" src="../img/whatsapp.svg">
+            </label>
+            <label>
+                Ruan - (48) 9 8845-5647
+                <img class="rodape-contato-img" src="../img/whatsapp.svg">
+            </label>
+            <label>
+                Pedro - (48) 9 8845-5647
+                <img class="rodape-contato-img" src="../img/whatsapp.svg">
+            </label>
+        </div>
+    </footer>
+</body>
+</html>
