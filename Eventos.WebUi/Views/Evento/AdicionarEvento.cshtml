@@ -1,0 +1,55 @@
+﻿@using Eventos.Domain.DTOs.InputModel
+@model AdicionarEventoInputModel
+
+<h1>teste</h1>
+<form asp-controller="Evento" asp-action="Adicionar" method="post">
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Imagem</label>
+        <input type="text" asp-for="Imagem" class="form-control col-3">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Rua</label>
+        <input type="text" asp-for="Rua" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Numero</label>
+        <input type="number" asp-for="Numero" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Cidade</label>
+        <input type="text" asp-for="Cidade" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Estado</label>
+        <input type="text" asp-for="Estado" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Bairro</label>
+        <input type="text" asp-for="Bairro" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Data</label>
+        <input type="date" asp-for="Data" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Hora</label>
+        <input type="time" asp-for="Hora" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Tamanho Local</label>
+        <input type="text" asp-for="TamanhoLocal" class="form-control col-3" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputNomee" class="form-label">Categoria</label>
+        <input type="number" asp-for="Categoria" min=1 max=6 class="form-control col-3" required>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-secondary" role="button" type="submit">Adicionar</button>
+        <a class="btn btn-secondary" type="button" asp-controller="Evento" asp-action="Index">Cancelar</a>
+    </div>
+</form>

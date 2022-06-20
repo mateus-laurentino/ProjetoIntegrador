@@ -12,6 +12,7 @@ namespace Eventos.Infra.Configuration
             builder.HasKey(i => i.Id);
 
             builder.Property(i=>i.Id).HasColumnType("int").IsRequired();
+            builder.Property(i => i.Imagem).HasColumnType("varchar(100)");
             builder.Property(i=>i.Nome).HasColumnType("Varchar").HasMaxLength(70).IsRequired();
             builder.Property(i=>i.Localidade).HasColumnType("Varchar").HasMaxLength(70).IsRequired();
             builder.Property(i=>i.DataEHora).HasColumnType("smalldatetime").IsRequired();

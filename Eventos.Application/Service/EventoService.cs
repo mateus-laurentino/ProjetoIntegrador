@@ -1,4 +1,6 @@
-﻿using Eventos.Domain.DTOs.OutputModel;
+﻿using Eventos.Domain.DTOs.InputModel;
+using Eventos.Domain.DTOs.OutputModel;
+using Eventos.Domain.Enums;
 using Eventos.Domain.Interfaces.IRepository;
 using Eventos.Domain.Interfaces.IService;
 using System.Collections.Generic;
@@ -15,7 +17,10 @@ namespace Eventos.Application.Service
             _eventoRepository = eventoRepository;
         }
 
-        public async Task<List<EventoOutputModel>> BuscarTodos()
-            => await _eventoRepository.BuscarTodos();
+        public async Task<List<EventoOutputModel>> BuscarTodos(CategoriaEnum categoria)
+            =>await _eventoRepository.BuscarTodos(categoria);
+
+        public async Task<bool> AdicionarEvento(AdicionarEventoInputModel model)
+            => await _eventoRepository.AdicionarEvento(model);
     }
 }

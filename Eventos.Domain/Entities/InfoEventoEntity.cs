@@ -6,6 +6,7 @@ namespace Eventos.Domain.Entities
 {
     public class InfoEventoEntity : BaseEntity<int>
     {
+        public string Imagem { get; private set; }
         public string Nome { get; private set; }
         public string Localidade { get; private set; }
         public DateTime DataEHora { get; private set; }
@@ -15,6 +16,16 @@ namespace Eventos.Domain.Entities
         public InfoEventoEntity()
         {
 
+        }
+
+        public InfoEventoEntity(string imagem, string nome, string localidade, DateTime dataEHora, int qtdeTotalPessoa, CategoriaEnum categoria)
+        {
+            Imagem = imagem;
+            Nome = nome;
+            Localidade = localidade;
+            DataEHora = dataEHora;
+            QtdeTotalPessoa = qtdeTotalPessoa;
+            Categoria = categoria;
         }
     }
 }

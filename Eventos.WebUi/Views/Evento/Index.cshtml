@@ -1,4 +1,5 @@
-﻿@using Eventos.Domain.DTOs.OutputModel
+﻿@using Eventos.Domain.DTOs.InputModel
+@using Eventos.Domain.DTOs.OutputModel
 
 @model List<EventoOutputModel>
 
@@ -18,13 +19,13 @@
         <div class="categoria-ul">
             <ul class="categoria-ul-nav">
                 <li>
-                    <a href="#" title="Aniversario">
+                    <a title="Aniversario" asp-action="Index">
                         <img src="../img/categorias/aniversario.png" alt="#">
                     </a>
                 </li>
                 <li>
                     <a href="#" title="Festival de compras">
-                        <img src="../img/categorias/Compras.png" alt="#">
+                        <img src="../img/categorias/Compras.png" alt="">
                     </a>
                 </li>
                 <li>
@@ -56,34 +57,35 @@
 
     <main class="conteudo">
         <ul class="conteudo-nav">
-            <li class="conteudo-nav-item">
-                <img class="conteudo-nav-item-img" src="../img/logo.png" width="75%">
-                <label class="conteudo-nav-item-linha"></label>
-                <div class="conteudo-nav-item-desc">
-                    <ul>
-                        @if (Model != null && Model.Any())
-                        {
-                            foreach (EventoOutputModel evento in Model)
-                            {
-                                <li>
-                                    <label class="conteudo-nav-item-desc-text" for="">Nome:</label>
-                                    <input type="text" disabled>
-                                    <label class="conteudo-nav-item-desc-text" for="">Local:</label>
-                                    <input type="text" disabled>
-                                    <label class="conteudo-nav-item-desc-text" for="">Horario:</label>
-                                    <input type="text" disabled>
-                                    <label class="conteudo-nav-item-desc-text" for="">Espaço:</label>
-                                    <input type="text" disabled>
-                                    <label class="conteudo-nav-item-desc-text" for="">Categoria:</label>
-                                    <ul class="lista-item-desc-categoria">
-                                        <li class="lista-desc-categoria-item">
-                                            <img class="lista-item-desc-categoria-img" src="../img/categorias/aniversario.png">
-                                        </li>
-                                    </ul>
+            @if (Model != null && Model.Any())
+            {
+                foreach (EventoOutputModel evento in Model)
+                {
+                    <li class="conteudo-nav-item">
+                        <img class="conteudo-nav-item-img" src="@evento.Imagem">
+                        <label class="conteudo-nav-item-linha"></label>
+                        <div class="conteudo-nav-item-desc">
+                            <label class="conteudo-nav-item-desc-text" for="">Nome:</label>
+                            <input class="conteudo-nav-item-desc-input" type="text" disabled value=@evento.Nome>
+                            <label class="conteudo-nav-item-desc-text" for="">Local:</label>
+                            <input class="conteudo-nav-item-desc-input" disabled type="text" value="@evento.Localidade" title="@evento.Localidade">
+                            <label class="conteudo-nav-item-desc-text" for="">Horario:</label>
+                            <input class="conteudo-nav-item-desc-input" type="text" disabled value=@evento.DataEHora>
+                            <label class="conteudo-nav-item-desc-text" for="">Locação Maxima:</label>
+                            <input class="conteudo-nav-item-desc-input" type="text" disabled value=@evento.QtdeTotalPessoa>
+                            <label class="conteudo-nav-item-desc-text" for="">Categoria:</label>
+                            <ul class="lista-item-desc-categoria">
+                                <li class="lista-desc-categoria-item">
+                                    <img id="teste" class="lista-item-desc-categoria-img" src="~/img/categorias/@evento.CaminhoImagem">
                                 </li>
-                            }
-                        }
-                    </ul>
+                            </ul>
+                        </div>
+                    </li>
+                }
+            }
+            <li class="conteudo-nav-item">
+                <div class="adicionar-novoEvento-nav">
+                    <a type="button" class="lbl-adicionar-novoEvento-nav" asp-controller="Evento" asp-action="AdicionarEvento">+</a>
                 </div>
             </li>
         </ul>

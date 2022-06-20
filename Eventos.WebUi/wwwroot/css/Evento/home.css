@@ -102,9 +102,31 @@ label {
 .conteudo-nav-item-img {
     margin: 5%;
     width: 90%;
-    height: 30%;
+    height: 5rem;
     border: 1px solid white;
     border-radius: 0.5rem;
+}
+.adicionar-novoEvento-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    border: 1px solid white;
+    width: 90%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.lbl-adicionar-novoEvento-nav{
+    font-size: 10rem;
+    background: none;
+    color: lightgray;
+    text-decoration: none;
+}
+
+.lbl-adicionar-novoEvento-nav:hover{
+    cursor: pointer;
+    color: white;
 }
 
 .conteudo-nav-item-linha {
@@ -117,6 +139,11 @@ label {
 .conteudo-nav-item-desc-text {
     color: white;
     font-size: 15px;
+}
+
+.conteudo-nav-item-desc-input{
+    background-color: white;
+    text-align: center;
 }
 
 .conteudo-nav-item-desc {
