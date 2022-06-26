@@ -12,6 +12,10 @@ namespace Eventos.Infra.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new InfoEventoConfiguration());
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.ApplyConfiguration(new LogadoConfiguration());
+            modelBuilder.ApplyConfiguration(new EventoParticipanteConfiguration());
+            modelBuilder.ApplyConfiguration(new CartaoUsuarioConfiguration());
         }
     }
 }

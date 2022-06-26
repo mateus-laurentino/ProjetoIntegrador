@@ -12,13 +12,14 @@ namespace Eventos.Domain.Entities
         public DateTime DataEHora { get; private set; }
         public int QtdeTotalPessoa { get; private set; }
         public CategoriaEnum Categoria { get; private set; }
+        public int IdUsuario { get; private set; }
 
         public InfoEventoEntity()
         {
 
         }
 
-        public InfoEventoEntity(string imagem, string nome, string localidade, DateTime dataEHora, int qtdeTotalPessoa, CategoriaEnum categoria)
+        public InfoEventoEntity(string imagem, string nome, string localidade, DateTime dataEHora, int qtdeTotalPessoa, CategoriaEnum categoria, int idUsuario)
         {
             Imagem = imagem;
             Nome = nome;
@@ -26,6 +27,7 @@ namespace Eventos.Domain.Entities
             DataEHora = dataEHora;
             QtdeTotalPessoa = qtdeTotalPessoa;
             Categoria = categoria;
+            IdUsuario = idUsuario;
         }
     }
 }

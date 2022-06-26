@@ -8,7 +8,9 @@ namespace Eventos.Domain.Interfaces.IService
 {
     public interface IEventoService
     {
-        Task<List<EventoOutputModel>> BuscarTodos(CategoriaEnum categoria);
+        Task<List<EventoOutputModel>> BuscarTodos(CategoriaEnum? categoria, int? idUsuario);
         Task<bool> AdicionarEvento(AdicionarEventoInputModel model);
+        Task<UsuarioOutputModel> LoginValidoAsync(LoginInputModel model);
+        Task<EventoOutputModel> BuscarPorId(int id);
     }
 }

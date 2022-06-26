@@ -1,112 +1,76 @@
-﻿@using Eventos.Domain.DTOs.InputModel
-@using Eventos.Domain.DTOs.OutputModel
+﻿@using Eventos.Domain.DTOs.OutputModel
 
 @model List<EventoOutputModel>
+<div class="layoutIndex">
+    <link rel="stylesheet" href="~/css/Eventos/Conteudo/index.css" />
+</div>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="~/css/Evento/home.css">
-</head>
-<body>
-    <header class="cabecalho">
-        <div class="logo-img">
-            <img class="logo" src="../img/logo.png">
-        </div>
-        <div class="categoria-ul">
-            <ul class="categoria-ul-nav">
-                <li>
-                    <a title="Aniversario" asp-action="Index">
-                        <img src="../img/categorias/aniversario.png" alt="#">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Festival de compras">
-                        <img src="../img/categorias/Compras.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Festa a fantasia">
-                        <img src="../img/categorias/fantasia.png" alt="#">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Karaoke">
-                        <img src="../img/categorias/Karaoke.png" alt="#">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Musica">
-                        <img src="../img/categorias/Musica.png" alt="#">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Teatro">
-                        <img src="../img/categorias/Teatro.png" alt="#">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="div-btn-login">
-            <input class="btn-login" type="button" value="Login">
-        </div>
-    </header>
-
-    <main class="conteudo">
-        <ul class="conteudo-nav">
-            @if (Model != null && Model.Any())
+<section class="conteudo">
+    <div class="div-titulo-cabecalho">
+        @if (@ViewData["Usuario"].ToString() == "Visitante")
+        {
+            <h1>Seja bem vindo "@ViewData["Usuario"]"</h1>
+            <input type="button" value="Login" onclick="location.href='@Url.Action("Login", "Evento")'">
+        }
+        else
+        {
+            <h1>Seja bem vindo "<a asp-action="Perfil">@ViewData["Usuario"]</a>"</h1>
+            <input type="button" value="Logout" onclick="location.href='@Url.Action("Logout", "Evento")'">
+        }
+    </div>
+    <div class="div-dos-eventos">
+        @if (Model != null && Model.Any())
+        {
+            foreach (EventoOutputModel evento in Model)
             {
-                foreach (EventoOutputModel evento in Model)
-                {
-                    <li class="conteudo-nav-item">
-                        <img class="conteudo-nav-item-img" src="@evento.Imagem">
-                        <label class="conteudo-nav-item-linha"></label>
-                        <div class="conteudo-nav-item-desc">
-                            <label class="conteudo-nav-item-desc-text" for="">Nome:</label>
-                            <input class="conteudo-nav-item-desc-input" type="text" disabled value=@evento.Nome>
-                            <label class="conteudo-nav-item-desc-text" for="">Local:</label>
-                            <input class="conteudo-nav-item-desc-input" disabled type="text" value="@evento.Localidade" title="@evento.Localidade">
-                            <label class="conteudo-nav-item-desc-text" for="">Horario:</label>
-                            <input class="conteudo-nav-item-desc-input" type="text" disabled value=@evento.DataEHora>
-                            <label class="conteudo-nav-item-desc-text" for="">Locação Maxima:</label>
-                            <input class="conteudo-nav-item-desc-input" type="text" disabled value=@evento.QtdeTotalPessoa>
-                            <label class="conteudo-nav-item-desc-text" for="">Categoria:</label>
-                            <ul class="lista-item-desc-categoria">
-                                <li class="lista-desc-categoria-item">
-                                    <img id="teste" class="lista-item-desc-categoria-img" src="~/img/categorias/@evento.CaminhoImagem">
-                                </li>
-                            </ul>
+                <div class="layout-ticket">
+                    <div class="layout-ticket-event">
+                        <img class="layout-ticket-event-img" src=@evento.Imagem>
+                    </div>
+                    <div class="layout-ticket-event-dados">
+                        <label>Local:</label>
+                        <label>@evento.Localidade</label>
+                        <label>Data - Horario:</label>
+                        <label>@evento.DataEHora</label>
+                        <div>
+                            <label>Quantidade de ingressos:</label><label>@evento.QtdeTotalPessoa</label>
                         </div>
-                    </li>
-                }
-            }
-            <li class="conteudo-nav-item">
-                <div class="adicionar-novoEvento-nav">
-                    <a type="button" class="lbl-adicionar-novoEvento-nav" asp-controller="Evento" asp-action="AdicionarEvento">+</a>
+                        <div class="divCategoria">
+                            <label>Categoria:</label>
+                            <img class="categoria-imnagem" src="~/img/categorias/@evento.CaminhoImagem">
+                        </div>
+                        <div class="layout-ticket-event-dados-buttons">
+                            @if (@ViewData["Usuario"].ToString() == "Visitante")
+                            {
+                                <input class="layout-ticket-event-dados-buttons-buy" type="button" disabled value="Comprar" />
+                            }
+                            else
+                            {
+                                <input class="layout-ticket-event-dados-buttons-buy" type="button" value="Comprar" onclick="location.href='@Url.Action("Comprar", "Evento", new{id=@evento.Id, nome=@ViewData["Usuario"].ToString()})'"/>
+                            }
+                        </div>
+                    </div>
                 </div>
-            </li>
-        </ul>
-    </main>
-
-    <footer class="rodape">
-        <div class="rodape-contato">
+            }
+        }
+    </div>
+</section>
+<footer class="rodape">
+    <div class="rodape-contato">
+        <div class="rodape-contato-div">
             <label>Contato: </label>
-            <label>
-                Mateus - (48) 9 8845-5647
-                <img class="rodape-contato-img" src="../img/whatsapp.svg">
-            </label>
-            <label>
-                Ruan - (48) 9 8845-5647
-                <img class="rodape-contato-img" src="../img/whatsapp.svg">
-            </label>
-            <label>
-                Pedro - (48) 9 8845-5647
-                <img class="rodape-contato-img" src="../img/whatsapp.svg">
-            </label>
         </div>
-    </footer>
-</body>
-</html>
+        <label>
+            Mateus - (48) 9 8845-5647
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Ruan - (48) 9 8440-6456
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Pedro - (47) 9 8809-2450
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+    </div>
+</footer>

@@ -18,13 +18,15 @@ namespace Eventos.Infra.Repositories
         {
         }
 
-        public async Task<List<EventoOutputModel>> BuscarTodos(CategoriaEnum categoria)
+        public async Task<List<EventoOutputModel>> BuscarTodos(CategoriaEnum? categoria, int? idUsuario)
         {
             var query = _dataSet.AsQueryable();
 
-            if (categoria != CategoriaEnum.TodasCategorias)
+            if (categoria != null)
                 query = query.Where(x => x.Categoria == categoria);
 
+            if(idUsuario != null)
+                query = query.Where(x => x.IdUsuario != idUsuario);
 
             var dados = await query
                     .Select(e => new EventoOutputModel
@@ -49,7 +51,8 @@ namespace Eventos.Infra.Repositories
                                                 model.Localidade,
                                                 model.DataEHora,
                                                 model.QtdePessoa,
-                                                model.Categoria
+                                                model.Categoria,
+                                                model.IdUsuarioOrganizador
                                                );
 
             await _context.AddAsync(entidade);
@@ -57,5 +60,6 @@ namespace Eventos.Infra.Repositories
 
             return true;
         }
+
     }
 }

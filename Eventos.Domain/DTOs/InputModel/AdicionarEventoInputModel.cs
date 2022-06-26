@@ -16,6 +16,7 @@ namespace Eventos.Domain.DTOs.InputModel
         public DateTime Hora { get; set; }
         public string TamanhoLocal { get; set; }
         public CategoriaEnum Categoria { get; set; }
+        public int IdUsuarioOrganizador { get; set; }
 
         public int QtdePessoa
         {

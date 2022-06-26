@@ -1,0 +1,85 @@
+a{
+    text-decoration-color: gray;
+    color: white;
+}
+
+.div-titulo-cabecalho {
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-dos-eventos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.layout-ticket {
+    display: flex;
+    width: 48%;
+    padding: 0.5rem;
+}
+
+.layout-ticket-event {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 25%;
+    padding: 0.5rem;
+}
+
+.layout-ticket-event-img {
+    width: 100%;
+}
+
+.layout-ticket-event-dados {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-left: 3px dotted white;
+    border-end-end-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    width: 75%;
+}
+
+    .layout-ticket-event-dados label {
+        font-size: 1em;
+    }
+
+.divCategoria {
+    display: flex;
+    align-items: center;
+}
+
+.categoria-imnagem {
+    width: 1.5rem;
+    margin: 2px 0;
+}
+
+.layout-ticket-event-dados-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.layout-ticket-event-dados-buttons-buy {
+    background: greenyellow;
+    padding: 5px 10px;
+    border-radius: 1rem;
+}
+
+.layout-ticket-event-dados-buttons-buy:hover {
+    cursor: pointer;
+    background: rgb(215, 255, 155);
+}
+
+.layout-ticket-event-dados-buttons-buy:disabled {
+    background: red;
+    color:black;
+}

@@ -4,25 +4,22 @@ namespace Eventos.Domain.Enums
 {
     public enum CategoriaEnum : short
     {
-        [Description("Todas Categorias")]
-        TodasCategorias = 0,
-
         [Description("Aniversario")]
-        Aniversario = 1,
+        Aniversario = 0,
 
         [Description("Festival De Compras")]
-        Compras = 2,
+        Compras = 1,
 
         [Description("Festa Fantasia")]
-        Fantasia = 3,
+        Fantasia = 2,
 
         [Description("Karaoke")]
-        Karaoke = 4,
+        Karaoke = 3,
 
         [Description("Musica")]
-        Musica = 5,
+        Musica = 4,
 
         [Description("Teatro")]
-        Teatro = 6
+        Teatro = 5
     }
 }
