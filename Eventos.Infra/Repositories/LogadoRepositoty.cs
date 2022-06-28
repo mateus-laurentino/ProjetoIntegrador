@@ -3,7 +3,6 @@ using Eventos.Domain.Interfaces.IRepository;
 using Eventos.Infra.Context;
 using Eventos.Infra.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Eventos.Infra.Repositories
@@ -15,6 +14,6 @@ namespace Eventos.Infra.Repositories
         }
 
         public async Task<LogadoEntity> VerificarSeLogadoAsync()
-            =>await _dataSet.FirstOrDefaultAsync();
+            => await _dataSet.FirstOrDefaultAsync();
     }
 }

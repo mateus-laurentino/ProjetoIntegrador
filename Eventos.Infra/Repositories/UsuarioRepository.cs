@@ -32,7 +32,7 @@ namespace Eventos.Infra.Repositories
         public async Task<UsuarioOutputModel> BuscarUsuarioAsync(string nomeUsuario)
             => await _dataSet
             .Where(x => x.Usuario == nomeUsuario)
-            .Select(x=> new UsuarioOutputModel
+            .Select(x => new UsuarioOutputModel
             {
                 Nome = x.Nome,
                 Usuario = x.Usuario,

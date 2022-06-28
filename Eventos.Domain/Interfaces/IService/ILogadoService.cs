@@ -1,5 +1,4 @@
-﻿using Eventos.Domain.DTOs.OutputModel;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Eventos.Domain.Interfaces.IService
 {

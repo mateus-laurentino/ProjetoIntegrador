@@ -4,10 +4,6 @@ using Eventos.Domain.Interfaces.IRepository;
 using Eventos.Domain.Interfaces.IRepository.Common;
 using Eventos.Domain.Interfaces.IService;
 using Eventos.Infra.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Eventos.Application.Service
@@ -43,7 +39,7 @@ namespace Eventos.Application.Service
             if (cartao.Cvc != model.Cvc)
                 return false;
 
-            var finalizar = new EventoParticipanteEntity().CadastrarUsuarioEvento(model,cartao.Id,evento.ValorIngresso);
+            var finalizar = new EventoParticipanteEntity().CadastrarUsuarioEvento(model, cartao.Id, evento.ValorIngresso);
             await _eventoParticipanteRepository.InserirAsync(finalizar);
             await _uow.CommitAsync();
 

@@ -26,7 +26,7 @@ namespace Eventos.Infra.Repositories.Base
         public async Task<T> AtualizarAsync(T entity)
         {
             T result = await _dataSet.FindAsync(entity.Id);
-            if(result == null)
+            if (result == null)
             {
                 return null;
             }
@@ -37,7 +37,7 @@ namespace Eventos.Infra.Repositories.Base
         public async Task<bool> DeletarAsync(TPK id)
         {
             T result = await _dataSet.FindAsync(id);
-            if(result == null)
+            if (result == null)
             {
                 return false;
             }

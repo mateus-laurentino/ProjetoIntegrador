@@ -25,7 +25,7 @@ namespace Eventos.Infra.Repositories
             if (categoria != null)
                 query = query.Where(x => x.Categoria == categoria);
 
-            if(idUsuario != null)
+            if (idUsuario != null)
                 query = query.Where(x => x.IdUsuario != idUsuario);
 
             var dados = await query

@@ -22,7 +22,7 @@ namespace Eventos.Application.Service
         }
 
         public async Task<List<EventoOutputModel>> BuscarTodos(CategoriaEnum? categoria, int? idUsuario)
-            =>await _eventoRepository.BuscarTodos(categoria, idUsuario);
+            => await _eventoRepository.BuscarTodos(categoria, idUsuario);
 
         public async Task<bool> AdicionarEvento(AdicionarEventoInputModel model)
             => await _eventoRepository.AdicionarEvento(model);

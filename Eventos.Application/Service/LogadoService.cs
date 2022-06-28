@@ -1,5 +1,4 @@
-﻿using Eventos.Domain.DTOs.OutputModel;
-using Eventos.Domain.Entities;
+﻿using Eventos.Domain.Entities;
 using Eventos.Domain.Interfaces.IRepository;
 using Eventos.Domain.Interfaces.IRepository.Common;
 using Eventos.Domain.Interfaces.IService;

@@ -31,7 +31,7 @@ namespace Eventos.WebUi.Controllers
             var usuario = await _usuarioService.BuscarUsuarioAsync(retorno);
 
             if (usuario == null)
-                usuario = new UsuarioOutputModel { Id = null};
+                usuario = new UsuarioOutputModel { Id = null };
 
             ViewData["Usuario"] = retorno;
 

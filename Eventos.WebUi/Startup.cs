@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 namespace Eventos.WebUi
 {
     public class Startup
-    {        
+    {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

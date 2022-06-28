@@ -1,5 +1,4 @@
-﻿using Eventos.Application.Service;
-using Eventos.Domain.DTOs.InputModel;
+﻿using Eventos.Domain.DTOs.InputModel;
 using Eventos.Domain.DTOs.OutputModel;
 using Eventos.Domain.Interfaces.IService;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +37,7 @@ namespace Eventos.WebUi.Controllers
             var result = await _eventoParticipanteService.ConfirmarParticipacaoAsync(model);
 
 
-            return RedirectToAction("Index","Evento");
+            return RedirectToAction("Index", "Evento");
         }
     }
 }

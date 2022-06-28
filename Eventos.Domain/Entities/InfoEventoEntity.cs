@@ -20,7 +20,7 @@ namespace Eventos.Domain.Entities
 
         }
 
-        public InfoEventoEntity(string imagem, string nome, string localidade, DateTime dataEHora, int qtdeTotalPessoa, 
+        public InfoEventoEntity(string imagem, string nome, string localidade, DateTime dataEHora, int qtdeTotalPessoa,
             CategoriaEnum categoria, int idUsuario, decimal valorIngresso)
         {
             Imagem = imagem;

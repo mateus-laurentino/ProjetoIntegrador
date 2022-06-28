@@ -12,8 +12,8 @@ namespace Eventos.Infra.Configuration
             builder.HasKey(l => l.Id);
 
             builder.Property(l => l.Id).HasColumnType("int").IsRequired();
-            builder.Property(l=>l.UsuarioLogado).HasColumnType("bit").IsRequired();
-            builder.Property(l=>l.Usuario).HasColumnType("varchar(100)").IsRequired();
+            builder.Property(l => l.UsuarioLogado).HasColumnType("bit").IsRequired();
+            builder.Property(l => l.Usuario).HasColumnType("varchar(100)").IsRequired();
         }
     }
 }
