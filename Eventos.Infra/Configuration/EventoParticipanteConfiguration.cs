@@ -14,6 +14,9 @@ namespace Eventos.Infra.Configuration
             builder.Property(e => e.Id).HasColumnType("int").IsRequired();
             builder.Property(e => e.IdEvento).HasColumnType("int").IsRequired();
             builder.Property(e => e.IdUsuario).HasColumnType("int").IsRequired();
+            builder.Property(e => e.IdCartao).HasColumnType("int").IsRequired();
+            builder.Property(e => e.Valor).HasColumnType("decimal(10,2)").IsRequired();
+            builder.Property(e => e.Parcelamento).HasColumnType("int").IsRequired();
         }
     }
 }

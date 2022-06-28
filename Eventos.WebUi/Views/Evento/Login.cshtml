@@ -1,17 +1,38 @@
 ﻿@using Eventos.Domain.DTOs.InputModel
+@using Eventos.WebUi.Resoucer
 
 @model LoginInputModel
 
-<section class="conteudo">
+<section class="conteudo conteudo-login">
     <div class="layout">
         <link rel="stylesheet" href="~/css/Eventos/Conteudo/login.css" />
     </div>
-    <form asp-controller="Evento" asp-action="Logar" method="post">
-        <input type="text" placeholder="usuario" asp-for="Usuario"/>
-        <input type="password" placeholder="Senha" asp-for="Password" />
-        <button role="button" type="submit">Entrar</button>
-    </form>
+    <div class="div-form-login-registro">
+        @if (@ViewData["Error"] != null)
+        {
+            <div>
+                <p class="erroTexto">@ViewData["Error"].ToString()</p>
+            </div>
+        }
+        <form class="form-login-registro" asp-controller="Evento" asp-action="Logar" method="post">
+            @if (@ViewData["Error"] != null)
+            {
+                <input class="form-login-registro-input erroInput" type="text" placeholder="usuario" asp-for="Usuario"  required/>
+                <input class="form-login-registro-input erroInput" type="password" placeholder="Senha" asp-for="Password"  required/>
+            }
+            else
+            {
+                <input class="form-login-registro-input" type="text" placeholder="usuario" asp-for="Usuario"  required/>
+                <input class="form-login-registro-input" type="password" placeholder="Senha" asp-for="Password"  required/>
+            }
+            <div class="botoes-login-registro">
+                <button class="botoes-login-registro-button entrar" role="button" type="submit">Entrar</button>
+                <input class="botoes-login-registro-button cadastrar" type="button" onclick="location.href='@Url.Action("Index", "Usuario")'" value="Registrar" />
+            </div>
+        </form>
+    </div>
 </section>
+
 <footer class="rodape">
     <div class="rodape-contato">
         <div class="rodape-contato-div">

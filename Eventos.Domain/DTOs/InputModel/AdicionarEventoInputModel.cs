@@ -17,6 +17,7 @@ namespace Eventos.Domain.DTOs.InputModel
         public string TamanhoLocal { get; set; }
         public CategoriaEnum Categoria { get; set; }
         public int IdUsuarioOrganizador { get; set; }
+        public int ValorIngresso { get; set; }
 
         public int QtdePessoa
         {

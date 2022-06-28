@@ -1,0 +1,56 @@
+﻿@using Eventos.Domain.DTOs.InputModel
+
+@model CadastrarUsuarioInputModel
+
+<section class="conteudo">
+    <div class="layout">
+        <link rel="stylesheet" href="~/css/Eventos/Conteudo/registrar.css" />
+    </div>
+    <form class="form-cadastro-usuario" asp-controller="Usuario" asp-action="Cadastrar" method="post">
+        <div class="dadosUsuario">
+            <label>Nome:</label>
+            <input type="text" asp-for="Nome" required/>
+            <label>Idade:</label>
+            <input type="number" asp-for="Idade" required/>
+            <label>Data Nascimento:</label>
+            <input type="date" asp-for="DataNascimento" required/>
+            <label>Usuario:</label>
+            <input type="text" asp-for="Usuario" required/>
+            <label>Password:</label>
+            <input type="text" asp-for="Password" required/>
+        </div>
+        <div class="dadosCartao">
+            <label>Numero do cartao:</label>
+            <input type="text" asp-for="NumeroCartao" required/>
+            <label>Nome do cartao:</label>
+            <input type="text" asp-for="NomeCartao" required/>
+            <label>CVC:</label>
+            <input type="number" asp-for="Cvc" required/>
+            <label>Data de Vencimento:</label>
+            <input type="month" asp-for="DataVencimento" required/>
+        </div>
+        <div class="cadastro-finalizar">
+            <button class="" role="button" type="submit">Cadastrar</button>
+            <input class="botoes-login-registro-button cadastrar" type="button" onclick="location.href='@Url.Action("Login", "Evento")'" value="Cancelar" />
+        </div>
+    </form>
+</section>
+<footer class="rodape">
+    <div class="rodape-contato">
+        <div class="rodape-contato-div">
+            <label>Contato: </label>
+        </div>
+        <label>
+            Mateus - (48) 9 8845-5647
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Ruan - (48) 9 8440-6456
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Pedro - (47) 9 8809-2450
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+    </div>
+</footer>

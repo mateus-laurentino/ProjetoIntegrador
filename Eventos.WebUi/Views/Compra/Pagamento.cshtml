@@ -1,0 +1,53 @@
+﻿@using Eventos.Domain.DTOs.InputModel
+
+@model ComprarInputModel
+
+<section class="conteudo">
+    <div class="layout">
+        <link rel="stylesheet" href="~/css/Eventos/Conteudo/login.css" />
+    </div>
+    <form asp-controller="Compra" asp-action="Confirmar" method="post">
+        <div class="id-hidden">
+            <input hidden asp-for="IdEvento" value="@Model.IdEvento" />
+            <input hidden asp-for="IdUsuario" value="@Model.IdUsuario" />
+        </div>
+        <div class="input-label-div">
+            <input type="number" asp-for="Cvc" placeholder="CVC" />
+            <select asp-for="Parcelamento">
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+            </select>
+        </div>
+        <div class="button-div">
+            <button role="button" type="submit">Entrar</button>
+        </div>
+    </form>
+</section>
+
+<footer class="rodape">
+    <div class="rodape-contato">
+        <div class="rodape-contato-div">
+            <label>Contato: </label>
+        </div>
+        <label>
+            Mateus - (48) 9 8845-5647
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Ruan - (48) 9 8440-6456
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Pedro - (47) 9 8809-2450
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+    </div>
+</footer>

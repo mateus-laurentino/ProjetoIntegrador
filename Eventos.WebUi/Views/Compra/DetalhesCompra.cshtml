@@ -1,0 +1,62 @@
+﻿@using Eventos.Domain.DTOs.InputModel
+@using Eventos.Domain.DTOs.OutputModel
+
+@model DetalhesVendaOutputModel
+
+<div class="layout">
+    <link rel="stylesheet" href="~/css/Eventos/Conteudo/comprar.css" />
+</div>
+
+<section class="conteudo">
+    <form class="teste" asp-form>
+        <div class="div-informacoes-usuario">
+            <label>Usuario:</label>
+            <label>@Model.Usuario.Usuario</label>
+            <label>Nome:</label>
+            <label>@Model.Usuario.Nome</label>
+            <label>Idade:</label>
+            <label>@Model.Usuario.Idade</label>
+            <label>Data de nascimento:</label>
+            <label>@Model.Usuario.DataNascimento.ToShortDateString()</label>
+        </div>
+        <div class="div-informacoes-evento">
+            <img src=@Model.Evento.Imagem />
+            <label>Local: </label>
+            <label>@Model.Evento.Nome</label>
+            <label>Endereço:</label>
+            <label>@Model.Evento.Localidade</label>
+            <label>Data e Hora:</label>
+            <label>@Model.Evento.DataEHora</label>
+            <label>Ingressos disponiveis:</label>
+            <label>@Model.Evento.QtdeTotalPessoa</label>
+            <label>Categoria: </label>
+            <label>@Model.Evento.Categoria</label>
+            <label>Valor:</label>
+            <label>@Model.Evento.ValorIngresso</label>
+        </div>
+    </form>
+    <div>
+        <input class="layout-ticket-event-dados-buttons-buy" type="button" value="Pagamento" onclick="location.href='@Url.Action("Pagamento", "Compra", new ComprarInputModel{ IdUsuario = @Model.Usuario.Id, IdEvento = @Model.Evento.Id})'" />
+        <input class="layout-ticket-event-dados-buttons-buy" type="button" value="Cancelar" onclick="location.href='@Url.Action("Index", "Evento")'" />
+    </div>
+</section>
+
+<footer class="rodape">
+    <div class="rodape-contato">
+        <div class="rodape-contato-div">
+            <label>Contato: </label>
+        </div>
+        <label>
+            Mateus - (48) 9 8845-5647
+            <img class="rodape-contato-img" src="~/img/whatsapp.svg">
+        </label>
+        <label>
+            Ruan - (48) 9 8440-6456
+            <img class="rodape-contato-img" src="~/img/whatsapp.svg">
+        </label>
+        <label>
+            Pedro - (47) 9 8809-2450
+            <img class="rodape-contato-img" src="~/img/whatsapp.svg">
+        </label>
+    </div>
+</footer>

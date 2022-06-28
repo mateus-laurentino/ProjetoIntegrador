@@ -2,9 +2,7 @@
 using Eventos.Domain.DTOs.OutputModel;
 using Eventos.Domain.Enums;
 using Eventos.Domain.Interfaces.IRepository;
-using Eventos.Domain.Interfaces.IRepository.Common;
 using Eventos.Domain.Interfaces.IService;
-using Eventos.Infra.Context;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,8 +13,9 @@ namespace Eventos.Application.Service
         private readonly IEventoRepository _eventoRepository;
         private readonly IUsuarioRepository _usuarioRepository;
 
-        public EventoService(IEventoRepository eventoRepository, 
-            IUsuarioRepository usuarioRepository)
+        public EventoService(IEventoRepository eventoRepository,
+            IUsuarioRepository usuarioRepository,
+            ICartaoRepository cartaoRepository)
         {
             _eventoRepository = eventoRepository;
             _usuarioRepository = usuarioRepository;
@@ -43,7 +42,8 @@ namespace Eventos.Application.Service
                 Imagem = dados.Imagem,
                 Localidade = dados.Localidade,
                 Nome = dados.Nome,
-                QtdeTotalPessoa = dados.QtdeTotalPessoa
+                QtdeTotalPessoa = dados.QtdeTotalPessoa,
+                ValorIngresso = dados.ValorIngresso
             };
         }
     }

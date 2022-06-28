@@ -2,6 +2,7 @@
 using Eventos.Domain.DTOs.OutputModel;
 using Eventos.Domain.Enums;
 using Eventos.Domain.Interfaces.IService;
+using Eventos.WebUi.Resoucer;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -11,12 +12,15 @@ namespace Eventos.WebUi.Controllers
     {
         private readonly IEventoService _eventoService;
         private readonly ILogadoService _logadoService;
+        private readonly IUsuarioService _usuarioService;
 
         public EventoController(IEventoService eventoService,
-            ILogadoService logadoService)
+            ILogadoService logadoService,
+            IUsuarioService usuarioService)
         {
             _eventoService = eventoService;
             _logadoService = logadoService;
+            _usuarioService = usuarioService;
         }
 
         //Telas
@@ -24,7 +28,7 @@ namespace Eventos.WebUi.Controllers
         {
             var retorno = await _logadoService.VerificarSeLogadoAsync();
 
-            var usuario = await _logadoService.BuscarUsuarioAsync(retorno);
+            var usuario = await _usuarioService.BuscarUsuarioAsync(retorno);
 
             if (usuario == null)
                 usuario = new UsuarioOutputModel { Id = null};
@@ -43,14 +47,6 @@ namespace Eventos.WebUi.Controllers
         public IActionResult AdicionarEvento()
             => View();
 
-        public async Task<IActionResult> Comprar(int id, string nome)
-        {
-            var evento = await _eventoService.BuscarPorId(id);
-
-            var usuario = await _logadoService.BuscarUsuarioAsync(nome);
-
-            return View(new DetalhesVendaOutputModel(evento, usuario));
-        }
         //Buscas
 
         //Ações
@@ -69,7 +65,11 @@ namespace Eventos.WebUi.Controllers
             var usuario = await _eventoService.LoginValidoAsync(model);
 
             if (usuario == null)
+            {
+                ViewData["Error"] = ServiceResources.UsuarioSenhaInvalidos;
+
                 return View("Login");
+            }
 
             await _logadoService.Logar(usuario.Usuario);
 

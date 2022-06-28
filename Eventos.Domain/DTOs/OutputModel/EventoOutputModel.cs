@@ -12,6 +12,7 @@ namespace Eventos.Domain.DTOs.OutputModel
         public DateTime DataEHora { get; set; }
         public int QtdeTotalPessoa { get; set; }
         public CategoriaEnum Categoria { get; set; }
+        public decimal ValorIngresso { get; set; }
 
         public string CaminhoImagem
         {

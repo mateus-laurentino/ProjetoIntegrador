@@ -46,7 +46,7 @@
                             }
                             else
                             {
-                                <input class="layout-ticket-event-dados-buttons-buy" type="button" value="Comprar" onclick="location.href='@Url.Action("Comprar", "Evento", new{id=@evento.Id, nome=@ViewData["Usuario"].ToString()})'"/>
+                                <input class="layout-ticket-event-dados-buttons-buy" type="button" value="Comprar" onclick="location.href='@Url.Action("DetalhesCompra", "Compra", new{id=@evento.Id, nome=@ViewData["Usuario"].ToString()})'"/>
                             }
                         </div>
                     </div>

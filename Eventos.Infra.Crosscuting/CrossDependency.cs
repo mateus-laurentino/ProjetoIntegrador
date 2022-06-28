@@ -25,12 +25,16 @@ namespace Eventos.Infra.Crosscuting
             service.AddTransient<IEventoRepository, EventoRepository>();
             service.AddTransient<IUsuarioRepository, UsuarioRepository>();
             service.AddTransient<ILogadoRepositoty, LogadoRepositoty>();
+            service.AddTransient<IEventoParticipanteRepository, EventoParticipanteRepository>();
+            service.AddTransient<ICartaoRepository, CartaoRepository>();
         }
 
         private static void ConfiguringServices(this IServiceCollection service, IConfiguration configuration)
         {
             service.AddTransient<IEventoService, EventoService>();
             service.AddTransient<ILogadoService, LogadoService>();
+            service.AddTransient<IEventoParticipanteService, EventoParticipanteService>();
+            service.AddTransient<IUsuarioService, UsuarioService>();
         }
     }
 }

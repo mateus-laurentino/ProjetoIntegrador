@@ -19,6 +19,7 @@ namespace Eventos.Infra.Configuration
             builder.Property(i => i.QtdeTotalPessoa).HasColumnType("int").IsRequired();
             builder.Property(i => i.Categoria).HasColumnType("smallint").IsRequired();
             builder.Property(i => i.IdUsuario).HasColumnType("int").IsRequired();
+            builder.Property(i => i.ValorIngresso).HasColumnType("decimal(10,2)").IsRequired();
         }
     }
 }

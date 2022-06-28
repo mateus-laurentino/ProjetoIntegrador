@@ -8,6 +8,5 @@ namespace Eventos.Domain.Interfaces.IService
         Task<string> VerificarSeLogadoAsync();
         Task<string> DeslogarAsync();
         Task<bool> Logar(string usuario);
-        Task<UsuarioOutputModel> BuscarUsuarioAsync(string nomeUsuario);
     }
 }

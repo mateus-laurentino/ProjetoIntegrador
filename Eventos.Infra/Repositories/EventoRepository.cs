@@ -52,7 +52,8 @@ namespace Eventos.Infra.Repositories
                                                 model.DataEHora,
                                                 model.QtdePessoa,
                                                 model.Categoria,
-                                                model.IdUsuarioOrganizador
+                                                model.IdUsuarioOrganizador,
+                                                model.ValorIngresso
                                                );
 
             await _context.AddAsync(entidade);

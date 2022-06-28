@@ -11,14 +11,12 @@ namespace Eventos.Application.Service
     public class LogadoService : ILogadoService
     {
         private readonly ILogadoRepositoty _logadoRepositoty;
-        private readonly IUsuarioRepository _usuarioRepository;
         private readonly IUnitOfWork<EventoContext> _uow;
         public LogadoService(ILogadoRepositoty logadoRepositoty,
             IUsuarioRepository usuarioRepository,
             IUnitOfWork<EventoContext> uow)
         {
             _logadoRepositoty = logadoRepositoty;
-            _usuarioRepository = usuarioRepository;
             _uow = uow;
         }
 
@@ -62,8 +60,5 @@ namespace Eventos.Application.Service
 
             return true;
         }
-
-        public async Task<UsuarioOutputModel> BuscarUsuarioAsync(string nomeUsuario)
-            => await _usuarioRepository.BuscarUsuarioAsync(nomeUsuario);
     }
 }
