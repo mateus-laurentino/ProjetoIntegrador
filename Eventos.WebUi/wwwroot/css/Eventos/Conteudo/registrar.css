@@ -1,3 +1,60 @@
-.form-cadastro-usuario{
+.form-dados{
+    display: flex;
     width: 100%;
+    justify-content: center;
+}
+
+.form-cadastro-usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0D0D0D;
+    padding: 1rem;
+    width: fit-content;
+    border-radius: 3rem;
+    margin: 2rem;
+}
+
+.div-dados{
+    display: flex;
+    justify-content: center;
+}
+
+.dadosCartao, .dadosUsuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #161616;
+    width: 20rem;
+    height: 15rem;
+    margin: 1rem;
+    border-radius: 3rem;
+    border: 3px solid white;
+}
+
+.botoes-login-registro-button{
+    width: 7.5rem;
+    height: 2rem;
+    border-radius: 0.75rem;
+    border: 2px solid white;
+}
+
+.cadastrar{
+    background-color: greenyellow;
+}
+
+.cancelar{
+    color: white;
+    background-color: rgb(255, 63, 63);
+}
+
+.cadastrar:hover{
+    cursor: pointer;
+    background-color: rgb(207, 255, 134);
+}
+
+.cancelar:hover{
+    cursor: pointer;
+    background-color: rgb(255, 104, 104);
 }

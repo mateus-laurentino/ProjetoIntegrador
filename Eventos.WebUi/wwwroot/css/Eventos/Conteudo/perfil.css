@@ -1,0 +1,123 @@
+.detalhes-dados-usuario{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.div-eventos-usuario{
+    width: 100%;
+    display: flex;
+}
+
+.detalhes-dados-usuario div{
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhes-dados-usuario div label:nth-child(2){
+    color: white;
+}
+
+.detalhes-dados-usuario{
+    border-bottom: 4px solid #0D0D0D;
+}
+
+.button-return-home{
+    background-color: #0D0D0D;
+    border: 2px solid white;
+    color: white;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+}
+
+.button-return-home:hover{
+    cursor: pointer;
+    background-color: #242424;
+}
+
+.eventos-usuario-sera-participante{
+    width: 759px;
+    border-right: 2px solid #0D0D0D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eventos-usuario-sera-organizador{
+    width: 759px;
+    border-left: 2px solid #0D0D0D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-ticket{
+    width: 30rem;
+    height: 25rem;
+    background: #0D0D0D;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid white;
+}
+
+.layout-ticket-event{
+    width: 20rem;
+    height: 15rem;
+    margin: 5px;
+}
+
+.layout-ticket-event-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    border: 2px solid white;
+}
+
+.layout-ticket-event-dados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divCategoria{
+    display: flex;
+    align-items: center;
+}
+
+.categoria-imnagem{
+    width: 1.5rem;
+}
+
+.adicionar-evento input{
+    width: 32rem;
+    height: 27rem;
+    border-radius: 1rem;
+    background: #0D0D0D;
+    border: 3px solid white;
+    color: white;
+    font-size: 15rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.adicionar-evento input:hover{
+    cursor: pointer;
+    background: #1a1a1a;
+}
+
+.detalhes-dados-usuario .button-return-home-logout{
+    display: flex;
+    flex-direction: row;
+}
+
+.button-return-home-logout input{
+    margin: 5px;
+}

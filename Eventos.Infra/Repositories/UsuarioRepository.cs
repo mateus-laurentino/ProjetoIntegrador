@@ -5,6 +5,7 @@ using Eventos.Domain.Interfaces.IRepository;
 using Eventos.Infra.Context;
 using Eventos.Infra.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace Eventos.Infra.Repositories
 
         public async Task<UsuarioOutputModel> LoginValidoAsync(LoginInputModel model)
                 => await _dataSet
-                .Where(x => x.Usuario == model.Usuario && x.Password == model.Password)
+                .Where(x => x.Usuario.Equals(model.Usuario) && x.Password.Equals(model.Password))
                 .Select(x => new UsuarioOutputModel
                 {
                     Id = x.Id,

@@ -1,4 +1,5 @@
-﻿using Eventos.Domain.DTOs.OutputModel;
+﻿using Eventos.Domain.DTOs.InputModel;
+using Eventos.Domain.DTOs.OutputModel;
 using System.Threading.Tasks;
 
 namespace Eventos.Domain.Interfaces.IService
@@ -7,5 +8,6 @@ namespace Eventos.Domain.Interfaces.IService
     {
         Task<UsuarioOutputModel> BuscarUsuarioAsync(string nomeUsuario);
         Task<UsuarioOutputModel> BuscarUsuarioPorIdAsync(int id);
+        Task<bool> CadastrarUsuario(CadastrarUsuarioInputModel model);
     }
 }

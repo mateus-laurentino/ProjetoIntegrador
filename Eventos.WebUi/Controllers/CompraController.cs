@@ -27,17 +27,20 @@ namespace Eventos.WebUi.Controllers
 
             var usuario = await _usuarioService.BuscarUsuarioAsync(nome);
 
-            return View(new DetalhesVendaOutputModel(evento, usuario));
+            var retorno = new DetalhesVendaOutputModel(evento, usuario);
+
+            return View(retorno);
         }
 
         public IActionResult Pagamento(ComprarInputModel model)
             => View(model);
         public async Task<IActionResult> Confirmar(ComprarInputModel model)
         {
-            var result = await _eventoParticipanteService.ConfirmarParticipacaoAsync(model);
+            await _eventoParticipanteService.ConfirmarParticipacaoAsync(model);
 
+            var usuario = await _usuarioService.BuscarUsuarioPorIdAsync(model.IdUsuario ?? 0);
 
-            return RedirectToAction("Index", "Evento");
+            return RedirectToAction("Index", "Perfil", new {usuario = usuario.Usuario});
         }
     }
 }

@@ -6,34 +6,38 @@
     <div class="layout">
         <link rel="stylesheet" href="~/css/Eventos/Conteudo/registrar.css" />
     </div>
-    <form class="form-cadastro-usuario" asp-controller="Usuario" asp-action="Cadastrar" method="post">
-        <div class="dadosUsuario">
-            <label>Nome:</label>
-            <input type="text" asp-for="Nome" required/>
-            <label>Idade:</label>
-            <input type="number" asp-for="Idade" required/>
-            <label>Data Nascimento:</label>
-            <input type="date" asp-for="DataNascimento" required/>
-            <label>Usuario:</label>
-            <input type="text" asp-for="Usuario" required/>
-            <label>Password:</label>
-            <input type="text" asp-for="Password" required/>
-        </div>
-        <div class="dadosCartao">
-            <label>Numero do cartao:</label>
-            <input type="text" asp-for="NumeroCartao" required/>
-            <label>Nome do cartao:</label>
-            <input type="text" asp-for="NomeCartao" required/>
-            <label>CVC:</label>
-            <input type="number" asp-for="Cvc" required/>
-            <label>Data de Vencimento:</label>
-            <input type="month" asp-for="DataVencimento" required/>
-        </div>
-        <div class="cadastro-finalizar">
-            <button class="" role="button" type="submit">Cadastrar</button>
-            <input class="botoes-login-registro-button cadastrar" type="button" onclick="location.href='@Url.Action("Login", "Evento")'" value="Cancelar" />
-        </div>
-    </form>
+    <div class="form-dados">
+        <form class="form-cadastro-usuario" asp-controller="Usuario" asp-action="Cadastrar" method="post">
+            <div class="div-dados">
+                <div class="dadosUsuario">
+                    <label>Nome:</label>
+                    <input type="text" asp-for="Nome" required />
+                    <label>Idade:</label>
+                    <input type="number" asp-for="Idade" required />
+                    <label>Data Nascimento:</label>
+                    <input type="date" asp-for="DataNascimento" required />
+                    <label>Usuario:</label>
+                    <input type="text" asp-for="Usuario" required />
+                    <label>Password:</label>
+                    <input type="text" asp-for="Password" required />
+                </div>
+                <div class="dadosCartao">
+                    <label>Numero do cartao:</label>
+                    <input type="text" asp-for="NumeroCartao" required />
+                    <label>Nome do cartao:</label>
+                    <input type="text" asp-for="NomeCartao" required />
+                    <label>CVC:</label>
+                    <input type="number" asp-for="Cvc" required />
+                    <label>Data de Vencimento:</label>
+                    <input type="month" asp-for="DataVencimento" required />
+                </div>
+            </div>
+            <div class="cadastro-finalizar">
+                <input class="botoes-login-registro-button cancelar" type="button" onclick="location.href='@Url.Action("Login", "Evento")'" value="Cancelar" />
+                <button class="botoes-login-registro-button cadastrar" role="button" type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
 </section>
 <footer class="rodape">
     <div class="rodape-contato">

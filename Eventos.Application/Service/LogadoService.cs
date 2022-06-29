@@ -11,8 +11,8 @@ namespace Eventos.Application.Service
     {
         private readonly ILogadoRepositoty _logadoRepositoty;
         private readonly IUnitOfWork<EventoContext> _uow;
+
         public LogadoService(ILogadoRepositoty logadoRepositoty,
-            IUsuarioRepository usuarioRepository,
             IUnitOfWork<EventoContext> uow)
         {
             _logadoRepositoty = logadoRepositoty;
@@ -47,10 +47,8 @@ namespace Eventos.Application.Service
         {
             var logs = await _logadoRepositoty.VerificarSeLogadoAsync();
 
-            if (logs == null)
-                return false;
-
-            await _logadoRepositoty.DeletarAsync(logs.Id);
+            if(logs != null)
+                await _logadoRepositoty.DeletarAsync(logs.Id);
 
             var user = new LogadoEntity().Logar(usuario);
             await _logadoRepositoty.InserirAsync(user);

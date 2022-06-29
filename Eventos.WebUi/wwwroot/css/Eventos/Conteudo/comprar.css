@@ -1,0 +1,77 @@
+label{
+    color: white;
+}
+
+.container-div-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-informacoesCompra,
+.div-informacoes-evento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-informacoesCompra{
+    width: 500px;
+    background-color: #0D0D0D;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.div-informacoes-usuario{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.div-informacoes-usuario div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 5px;
+    text-align: center;
+}
+
+.div-informacoes-evento img{
+    width: 50%;
+    margin: 10px;
+    border-radius: 1rem;
+}
+
+.div-form-button{
+    display: flex;
+    justify-content: center;
+    margin: 10px 5px;
+}
+
+.layout-ticket-event-dados-buttons-buy{
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.75rem;
+    border: 2px solid white;
+    margin: 0 0.5rem;
+}
+
+.pagamento{
+    background-color: greenyellow;
+}
+
+.pagamento:hover{
+    cursor: pointer;
+    background-color: rgb(204, 255, 128);
+}
+
+.cancelar{
+    background-color: rgb(255, 33, 33);
+    color: white;
+}
+
+.cancelar:hover{
+    cursor: pointer;
+    background-color: rgb(255, 84, 84);
+}

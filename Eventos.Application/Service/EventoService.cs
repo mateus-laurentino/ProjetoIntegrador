@@ -12,17 +12,25 @@ namespace Eventos.Application.Service
     {
         private readonly IEventoRepository _eventoRepository;
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IEventoParticipanteRepository _eventoParticipanteRepository;
 
         public EventoService(IEventoRepository eventoRepository,
             IUsuarioRepository usuarioRepository,
-            ICartaoRepository cartaoRepository)
+            ICartaoRepository cartaoRepository,
+            IEventoParticipanteRepository eventoParticipanteRepository)
         {
             _eventoRepository = eventoRepository;
             _usuarioRepository = usuarioRepository;
+            _eventoParticipanteRepository = eventoParticipanteRepository;
         }
 
         public async Task<List<EventoOutputModel>> BuscarTodos(CategoriaEnum? categoria, int? idUsuario)
-            => await _eventoRepository.BuscarTodos(categoria, idUsuario);
+        {
+            var listaEventosParticipante = await _eventoParticipanteRepository.BuscarEventosIdUsuario(idUsuario);
+
+
+            return await _eventoRepository.BuscarTodos(categoria, idUsuario, listaEventosParticipante);
+        }
 
         public async Task<bool> AdicionarEvento(AdicionarEventoInputModel model)
             => await _eventoRepository.AdicionarEvento(model);

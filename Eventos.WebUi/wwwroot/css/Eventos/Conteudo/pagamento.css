@@ -1,0 +1,65 @@
+label{
+    color: white;
+}
+
+.conteiner-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.form-finalizar-compra{
+    background-color: #0D0D0D;
+    width: 17.5rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.input-label-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.input-label-div input{
+    text-align: center;
+}
+
+.input-label-div div{
+    display: flex;
+    align-items: center;
+}
+
+.div-form-button{
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.75rem;
+    border: 2px solid white;
+    margin: 0 0.2rem;
+}
+
+.comprar{
+    background-color: greenyellow;
+}
+
+.comprar:hover{
+    cursor: pointer;
+    background-color: rgb(204, 255, 128);
+}
+
+.cancelar{
+    background-color: rgb(255, 33, 33);
+    color: white;
+}
+
+.cancelar:hover{
+    cursor: pointer;
+    background-color: rgb(255, 84, 84);
+}

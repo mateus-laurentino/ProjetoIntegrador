@@ -14,7 +14,7 @@
         }
         else
         {
-            <h1>Seja bem vindo "<a asp-action="Perfil">@ViewData["Usuario"]</a>"</h1>
+            <h1>Seja bem vindo "<a asp-controller="Perfil" asp-route-usuario="@ViewData["Usuario"]" asp-action="Index">@ViewData["Usuario"]</a>"</h1>
             <input type="button" value="Logout" onclick="location.href='@Url.Action("Logout", "Evento")'">
         }
     </div>
@@ -28,6 +28,7 @@
                         <img class="layout-ticket-event-img" src=@evento.Imagem>
                     </div>
                     <div class="layout-ticket-event-dados">
+                        <h3>@evento.Nome</h3>
                         <label>Local:</label>
                         <label>@evento.Localidade</label>
                         <label>Data - Horario:</label>

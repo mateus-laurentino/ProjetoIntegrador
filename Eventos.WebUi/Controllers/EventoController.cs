@@ -41,15 +41,19 @@ namespace Eventos.WebUi.Controllers
         public IActionResult Login()
             => View();
 
-        public IActionResult Perfil()
-            => View();
-
-        public IActionResult AdicionarEvento()
-            => View();
-
-        //Buscas
+        public IActionResult AdicionarEvento(int? idUsuario)
+            => View(new AdicionarEventoInputModel { IdUsuarioOrganizador = idUsuario ?? 10 });
 
         //Ações
+        [HttpPost]
+        public async Task<IActionResult> CadastrarEvento(AdicionarEventoInputModel model)
+        {
+            await _eventoService.AdicionarEvento(model);
+            var usuario = await _usuarioService.BuscarUsuarioPorIdAsync(model.IdUsuarioOrganizador);
+            return RedirectToAction("Index","Perfil", new { usuario = usuario.Usuario });
+        }
+
+        //Login
         public async Task<IActionResult> Logout()
         {
             var retorno = await _logadoService.DeslogarAsync();

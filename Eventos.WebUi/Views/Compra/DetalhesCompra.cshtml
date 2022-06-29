@@ -1,6 +1,7 @@
 ﻿@using Eventos.Domain.DTOs.InputModel
 @using Eventos.Domain.DTOs.OutputModel
 
+
 @model DetalhesVendaOutputModel
 
 <div class="layout">
@@ -8,36 +9,58 @@
 </div>
 
 <section class="conteudo">
-    <form class="teste" asp-form>
-        <div class="div-informacoes-usuario">
-            <label>Usuario:</label>
-            <label>@Model.Usuario.Usuario</label>
-            <label>Nome:</label>
-            <label>@Model.Usuario.Nome</label>
-            <label>Idade:</label>
-            <label>@Model.Usuario.Idade</label>
-            <label>Data de nascimento:</label>
-            <label>@Model.Usuario.DataNascimento.ToShortDateString()</label>
-        </div>
-        <div class="div-informacoes-evento">
-            <img src=@Model.Evento.Imagem />
-            <label>Local: </label>
-            <label>@Model.Evento.Nome</label>
-            <label>Endereço:</label>
-            <label>@Model.Evento.Localidade</label>
-            <label>Data e Hora:</label>
-            <label>@Model.Evento.DataEHora</label>
-            <label>Ingressos disponiveis:</label>
-            <label>@Model.Evento.QtdeTotalPessoa</label>
-            <label>Categoria: </label>
-            <label>@Model.Evento.Categoria</label>
-            <label>Valor:</label>
-            <label>@Model.Evento.ValorIngresso</label>
-        </div>
-    </form>
-    <div>
-        <input class="layout-ticket-event-dados-buttons-buy" type="button" value="Pagamento" onclick="location.href='@Url.Action("Pagamento", "Compra", new ComprarInputModel{ IdUsuario = @Model.Usuario.Id, IdEvento = @Model.Evento.Id})'" />
-        <input class="layout-ticket-event-dados-buttons-buy" type="button" value="Cancelar" onclick="location.href='@Url.Action("Index", "Evento")'" />
+    <div class="container-div-form">
+        <form class="form-informacoesCompra" asp-form>
+            <div class="div-informacoes-usuario">
+                <div>
+                    <label>Usuario:</label>
+                    <label>@Model.Usuario.Usuario</label>
+                </div>
+                <div>
+                    <label>Nome:</label>
+                    <label>@Model.Usuario.Nome</label>
+                </div>
+                <div>
+                    <label>Idade:</label>
+                    <label>@Model.Usuario.Idade</label>
+                </div>
+                <div>
+                    <label>Data de nascimento:</label>
+                    <label>@Model.Usuario.DataNascimento.ToShortDateString()</label>
+                </div>
+            </div>
+            <div class="div-informacoes-evento">
+                <img src=@Model.Evento.Imagem />
+                <div>
+                    <label>Local: </label>
+                    <label>@Model.Evento.Nome</label>
+                </div>
+                <div>
+                    <label>Endereço:</label>
+                    <label>@Model.Evento.Localidade</label>
+                </div>
+                <div>
+                    <label>Data e Hora:</label>
+                    <label>@Model.Evento.DataEHora</label>
+                </div>
+                <div>
+                    <label>Ingressos disponiveis:</label>
+                    <label>@Model.Evento.QtdeTotalPessoa</label>
+                </div>
+                <div>
+                    <label>Categoria: </label>
+                    <label>@Model.Evento.Categoria</label>
+                </div>
+                <div>
+                    <label>Valor:</label>
+                    <label>@Model.Evento.ValorIngresso</label>
+                </div>
+            </div>
+            <div class="div-form-button">
+                <input class="layout-ticket-event-dados-buttons-buy pagamento" type="button" value="Pagamento" onclick="location.href='@Url.Action("Pagamento", "Compra", new ComprarInputModel{ IdUsuario = @Model.Usuario.Id, IdEvento = @Model.Evento.Id})'" />
+                <input class="layout-ticket-event-dados-buttons-buy cancelar" type="button" value="Cancelar" onclick="location.href='@Url.Action("Index", "Evento")'" />
+            </div>
+        </form>
     </div>
 </section>
 

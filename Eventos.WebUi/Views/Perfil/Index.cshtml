@@ -1,0 +1,111 @@
+﻿@using Eventos.Domain.DTOs.OutputModel
+
+@model EventosUsuarioOutputModel
+
+<div class="layout">
+    <link rel="stylesheet" href="~/css/Eventos/Conteudo/perfil.css" />
+</div>
+<section class="conteudo">
+    <div class="detalhes-dados-usuario">
+        <div>
+            <label>Nome:</label>
+            <label>@Model.Usuario.Nome</label>
+        </div>
+        <div>
+            <label>Idade:</label>
+            <label>@Model.Usuario.Idade</label>
+        </div>
+        <div>
+            <label>Data de Nascimento:</label>
+            <label>@Model.Usuario.DataNascimento.ToShortDateString()</label>
+        </div>
+        <div>
+            <label>Usuario:</label>
+            <label>@Model.Usuario.Usuario</label>
+        </div>
+        <div class="button-return-home-logout">
+            <input class="button-return-home" type="button" value="Inicio" onclick="location.href='@Url.Action("Index", "Evento")'"/>
+            <input class="button-return-home" type="button" value="Sair" onclick="location.href='@Url.Action("Logout", "Evento")'"/>
+        </div>
+    </div>
+    <div class="div-eventos-usuario">
+        <div class="eventos-usuario-sera-participante">
+            <h1>Participando: </h1>
+            @if (@Model != null)
+            {
+                foreach (var evento in @Model.EventosParticipante)
+                {
+                    <div class="layout-ticket">
+                        <div class="layout-ticket-event">
+                            <img class="layout-ticket-event-img" src=@evento.Imagem>
+                        </div>
+                        <div class="layout-ticket-event-dados">
+                            <label>Local:</label>
+                            <label>@evento.Localidade</label>
+                            <label>Data - Horario:</label>
+                            <label>@evento.DataEHora</label>
+                            <div>
+                                <label>Quantidade de ingressos:</label><label>@evento.QtdeTotalPessoa</label>
+                            </div>
+                            <div class="divCategoria">
+                                <label>Categoria:</label>
+                                <img class="categoria-imnagem" src="~/img/categorias/@evento.CaminhoImagem">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="eventos-usuario-sera-organizador">
+            <h1>Organizando: </h1>
+            <div class="adicionar-evento">
+                <input type="button" value="+" onclick="location.href='@Url.Action("AdicionarEvento", "Evento", new{idUsuario=@Model.Usuario.Id})'" />
+            </div>
+            @if (@Model != null)
+            {
+                foreach (var evento in @Model.EventosOrganizador)
+                {
+                    <div class="layout-ticket">
+                        <div class="layout-ticket-event">
+                            <img class="layout-ticket-event-img" src=@evento.Imagem>
+                        </div>
+                        <div class="layout-ticket-event-dados">
+                            <label>Local:</label>
+                            <label>@evento.Localidade</label>
+                            <label>Data - Horario:</label>
+                            <label>@evento.DataEHora</label>
+                            <div>
+                                <label>Quantidade de ingressos:</label><label>@evento.QtdeTotalPessoa</label>
+                            </div>
+                            <div class="divCategoria">
+                                <label>Categoria:</label>
+                                <img class="categoria-imnagem" src="~/img/categorias/@evento.CaminhoImagem">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+
+</section>
+<footer class="rodape">
+    <div class="rodape-contato">
+        <div class="rodape-contato-div">
+            <label>Contato: </label>
+        </div>
+        <label>
+            Mateus - (48) 9 8845-5647
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Ruan - (48) 9 8440-6456
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+        <label>
+            Pedro - (47) 9 8809-2450
+            <img class="rodape-contato-img" src="../img/whatsapp.svg">
+        </label>
+    </div>
+</footer>

@@ -11,6 +11,11 @@ namespace Eventos.Domain.Entities
         public int Idade { get; private set; }
         public DateTime DataNascimento { get; private set; }
 
+        public UsuarioEntity()
+        {
+
+        }
+
         public UsuarioEntity(string usuario, string password, string nome, int idade, DateTime dataNascimento)
         {
             Usuario = usuario;
@@ -18,6 +23,17 @@ namespace Eventos.Domain.Entities
             Nome = nome;
             Idade = idade;
             DataNascimento = dataNascimento;
+        }
+
+        public UsuarioEntity CriarUsuario(string usuario, string password, string nome, int idade, DateTime dataNascimento)
+        {
+            Usuario = usuario;
+            Password = password;
+            Nome = nome;
+            Idade = idade;
+            DataNascimento = dataNascimento;
+
+            return this;
         }
     }
 }
