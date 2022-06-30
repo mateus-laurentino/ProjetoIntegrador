@@ -5,19 +5,15 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D32E9CB1-06CE-46D4-BF50-16C3BB270DE6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{68C9E0C0-7F8F-4D46-8195-B1462EDDF7A0}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Test", "Eventos.Test\Eventos.Test.csproj", "{880AA89F-B1BF-4E40-B4E1-93F67192CB65}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Domain", "Eventos.Domain\Eventos.Domain.csproj", "{EE11289C-6AAF-4C00-AD1F-A1F44E9860AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Infra", "Eventos.Infra\Eventos.Infra.csproj", "{47ED10A2-7AF8-48D2-9313-5741F3256B7A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Infra.Crosscuting", "Eventos.Infra.Crosscuting\Eventos.Infra.Crosscuting.csproj", "{234D1581-218D-4B8B-AFF0-003B3A6AFD61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.Application", "Eventos.Application\Eventos.Application.csproj", "{55579F03-C667-4FDA-A18F-6011AFEE3781}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Application", "Eventos.Application\Eventos.Application.csproj", "{55579F03-C667-4FDA-A18F-6011AFEE3781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.WebUi", "Eventos.WebUi\Eventos.WebUi.csproj", "{83DF0823-D2A9-424B-8CF6-ED4D31790699}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.WebUi", "Eventos.WebUi\Eventos.WebUi.csproj", "{83DF0823-D2A9-424B-8CF6-ED4D31790699}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{880AA89F-B1BF-4E40-B4E1-93F67192CB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{880AA89F-B1BF-4E40-B4E1-93F67192CB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{880AA89F-B1BF-4E40-B4E1-93F67192CB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{880AA89F-B1BF-4E40-B4E1-93F67192CB65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE11289C-6AAF-4C00-AD1F-A1F44E9860AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE11289C-6AAF-4C00-AD1F-A1F44E9860AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE11289C-6AAF-4C00-AD1F-A1F44E9860AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,7 +46,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{880AA89F-B1BF-4E40-B4E1-93F67192CB65} = {68C9E0C0-7F8F-4D46-8195-B1462EDDF7A0}
 		{EE11289C-6AAF-4C00-AD1F-A1F44E9860AC} = {D32E9CB1-06CE-46D4-BF50-16C3BB270DE6}
 		{47ED10A2-7AF8-48D2-9313-5741F3256B7A} = {D32E9CB1-06CE-46D4-BF50-16C3BB270DE6}
 		{234D1581-218D-4B8B-AFF0-003B3A6AFD61} = {D32E9CB1-06CE-46D4-BF50-16C3BB270DE6}

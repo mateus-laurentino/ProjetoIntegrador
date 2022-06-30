@@ -20,7 +20,7 @@ namespace Eventos.Application.Service
             IUsuarioRepository usuarioRepository,
             ICartaoRepository cartaoRepository,
             IEventoParticipanteRepository eventoParticipanteRepository,
-            IUnitOfWork<Infra.Context.EventoContext> uow)
+            IUnitOfWork<EventoContext> uow)
         {
             _eventoRepository = eventoRepository;
             _usuarioRepository = usuarioRepository;

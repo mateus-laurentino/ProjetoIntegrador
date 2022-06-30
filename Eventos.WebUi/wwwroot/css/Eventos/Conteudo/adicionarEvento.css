@@ -1,0 +1,67 @@
+.div-adcionarEvento{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-background{
+    background-color: #0D0D0D;
+    border: 3px solid white;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.form-adcionarEvento{
+    display: flex;
+    width: 30rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    width: 25rem;
+    margin: 5px;
+    text-align: center;
+}
+
+.selection-div{
+    width: 25rem;
+    display: flex;
+}
+
+.selection-div select{
+    width: 20rem;
+    text-align: center;
+}
+.selection-div label{
+    width: 5rem;
+}
+
+.cadastrar, .cancelar{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.cadastrar{
+    background-color: greenyellow;
+}
+
+.cancelar{
+    background-color: red;
+    border: 2px solid white;
+    color: white;
+}
+
+.cadastrar:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: rgb(225, 255, 181);
+}
+
+.cancelar:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: rgb(251, 79, 79)
+}

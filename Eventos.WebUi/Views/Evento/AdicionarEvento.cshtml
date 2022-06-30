@@ -7,33 +7,38 @@
     <link rel="stylesheet" href="~/css/Eventos/Conteudo/adicionarEvento.css" />
 </div>
 <section class="conteudo">
-    <div>
-        <form asp-controller="Evento" asp-action="CadastrarEvento" method="post">
-            <input hidden type="text" asp-for="IdUsuarioOrganizador" value="@Model.IdUsuarioOrganizador" />
-            <input type="text" asp-for="Imagem" placeholder="Link imagem" />
-            <input type="text" asp-for="Nome" placeholder="Nome do show" />
-            <input type="text" asp-for="Rua" placeholder= "Rua" />
-            <input type="text" asp-for="Numero" placeholder="Numero" />
-            <input type="text" asp-for="Cidade" placeholder="Cidade" />
-            <input type="text" asp-for="Estado" placeholder="Estado" />
-            <input type="text" asp-for="Bairro" placeholder="Bairro" />
-            <input type="date" min='2022-07-01' value="2022-07-01" asp-for="Data" placeholder="Dia do evento" />
-            <input type="time" asp-for="Hora" placeholder="Hora do evento" />
-            <input type="text" asp-for="TamanhoLocal" placeholder="Tamanho do ambiente" />
-            <label>Categoria:</label>
-            <select asp-for="Categoria">
-                <option value="@CategoriaEnum.Aniversario" >Aniversario</option>
-                <option value="@CategoriaEnum.Compras" >Compras</option>
-                <option value="@CategoriaEnum.Fantasia" >Fantasia</option>
-                <option value="@CategoriaEnum.Karaoke" >Karaoke</option>
-                <option value="@CategoriaEnum.Musica" >Musica</option>
-                <option value="@CategoriaEnum.Teatro" >Teatro</option>
-            </select>
-            <input type="text" asp-for="ValorIngresso" placeholder="Valor do ingresso" />
-            <div class="div-botoes-addEvento">
-                <button class="botoes-login-registro-button cadastrar" role="button" type="submit">Cadastrar</button>
-            </div>
-        </form>
+    <div class="div-adcionarEvento">
+        <div class="form-background">
+            <form class="form-adcionarEvento" asp-controller="Evento" asp-action="CadastrarEvento" method="post">
+                <input hidden type="text" asp-for="IdUsuarioOrganizador" value="@Model.IdUsuarioOrganizador" />
+                <input type="text" asp-for="Imagem" placeholder="Link imagem" />
+                <input type="text" asp-for="Nome" placeholder="Nome do show" />
+                <input type="text" asp-for="Rua" placeholder="Rua" />
+                <input type="text" asp-for="Numero" placeholder="Numero" />
+                <input type="text" asp-for="Cidade" placeholder="Cidade" />
+                <input type="text" asp-for="Estado" placeholder="Estado" />
+                <input type="text" asp-for="Bairro" placeholder="Bairro" />
+                <input type="date" min='2022-07-01' value="2022-07-01" asp-for="Data" placeholder="Dia do evento" />
+                <input type="time" asp-for="Hora" placeholder="Hora do evento" />
+                <input type="text" asp-for="TamanhoLocal" placeholder="Tamanho do ambiente" />
+                <div class="selection-div">
+                    <label>Categoria:</label>
+                    <select asp-for="Categoria">
+                        <option value="@CategoriaEnum.Aniversario">Aniversario</option>
+                        <option value="@CategoriaEnum.Compras">Compras</option>
+                        <option value="@CategoriaEnum.Fantasia">Fantasia</option>
+                        <option value="@CategoriaEnum.Karaoke">Karaoke</option>
+                        <option value="@CategoriaEnum.Musica">Musica</option>
+                        <option value="@CategoriaEnum.Teatro">Teatro</option>
+                    </select>
+                </div>
+                <input type="text" asp-for="ValorIngresso" placeholder="Valor do ingresso" />
+                <div class="div-botoes-addEvento">
+                    <button class="botoes-login-registro-button cadastrar" role="button" type="submit">Cadastrar</button>
+                    <input class="cancelar" type="button" value="Cancelar" onclick="location.href='@Url.Action("Index", "Perfil", new{idUsuario = @Model.IdUsuarioOrganizador})'" />
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 <footer class="rodape">
