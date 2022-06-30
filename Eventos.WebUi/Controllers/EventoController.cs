@@ -50,7 +50,7 @@ namespace Eventos.WebUi.Controllers
         {
             await _eventoService.AdicionarEvento(model);
             var usuario = await _usuarioService.BuscarUsuarioPorIdAsync(model.IdUsuarioOrganizador);
-            return RedirectToAction("Index","Perfil", new { usuario = usuario.Usuario });
+            return RedirectToAction("Index", "Perfil", new { usuario = usuario.Usuario });
         }
 
         //Login
@@ -80,6 +80,22 @@ namespace Eventos.WebUi.Controllers
             ViewData["Usuario"] = usuario.Usuario;
 
             return View("Index", await _eventoService.BuscarTodos(null, usuario.Id));
+        }
+
+
+        //Eventos
+        public async Task<IActionResult> CancelarEvento(int usuario, int idEvento)
+        {
+            await _eventoService.CancelarEventoAsync(idEvento, usuario);
+
+            return RedirectToAction("Index", "Perfil", new { idUsuario = usuario });
+        }
+
+        public async Task<IActionResult> CancelarParticipacao(int usuario, int idEvento)
+        {
+            await _eventoService.CancelarParticipacaoEventoAsync(idEvento, usuario);
+
+            return RedirectToAction("Index", "Perfil", new { idUsuario = usuario });
         }
     }
 }

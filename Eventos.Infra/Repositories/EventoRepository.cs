@@ -99,5 +99,11 @@ namespace Eventos.Infra.Repositories
                 ValorIngresso = x.ValorIngresso
             })
             .ToListAsync();
+
+        public async Task<InfoEventoEntity> CancelarEventoAsync(int idEvento, int idUsuario)
+            =>await _dataSet
+                .Where(x => x.Id == idEvento
+                        && x.IdUsuario == idUsuario)
+                .FirstOrDefaultAsync();
     }
 }

@@ -54,5 +54,26 @@ namespace Eventos.Application.Service
                 ValorIngresso = dados.ValorIngresso
             };
         }
+
+        public async Task<bool> CancelarParticipacaoEventoAsync(int idEvento, int idUsuario)
+            => await _eventoParticipanteRepository.CancelarParticipacaoEventoAsync(idUsuario, idEvento);
+
+        public async Task<bool> CancelarEventoAsync(int idEvento, int idUsuario)
+        {
+            var evento = await _eventoRepository.CancelarEventoAsync(idEvento, idUsuario);
+
+            var cancelarIngressos = await _eventoParticipanteRepository.ProcurarPorIdEvento(evento.Id);
+
+            if (cancelarIngressos != null)
+            {
+                foreach (var ingresso in cancelarIngressos)
+                {
+                    await _eventoParticipanteRepository.DeletarAsync(ingresso.Id);
+                }
+            }
+            await _eventoRepository.DeletarAsync(evento.Id);
+
+            return true;
+        }
     }
 }

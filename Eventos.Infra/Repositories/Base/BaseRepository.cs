@@ -43,6 +43,7 @@ namespace Eventos.Infra.Repositories.Base
             }
 
             _dataSet.Remove(result);
+            await _context.SaveChangesAsync();
             return true;
         }
         public async Task<T> ProcurarPorIdAsync(TPK id)

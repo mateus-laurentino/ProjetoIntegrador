@@ -21,5 +21,23 @@ namespace Eventos.Infra.Repositories
             .Where(x => x.IdUsuario == idUsuario)
             .Select(x => x.IdEvento)
             .ToListAsync();
+
+        public async Task<bool> CancelarParticipacaoEventoAsync(int idUsuario, int idEvento)
+        {
+            var evento = await _dataSet
+                    .Where(x => x.IdUsuario == idUsuario
+                           && x.IdEvento == idEvento)
+                    .FirstOrDefaultAsync();
+
+            _context.Remove(evento);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<List<EventoParticipanteEntity>> ProcurarPorIdEvento(int idEvento)
+            => await _dataSet
+                        .Where(x => x.IdEvento == idEvento)
+                        .ToListAsync();
     }
 }

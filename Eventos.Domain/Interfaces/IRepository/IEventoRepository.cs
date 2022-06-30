@@ -14,5 +14,6 @@ namespace Eventos.Domain.Interfaces.IRepository
         Task<bool> AdicionarEvento(AdicionarEventoInputModel model);
         Task<List<EventoOutputModel>> BuscarEventosParticipanteAsync(List<int> idEventos);
         Task<List<EventoOutputModel>> BuscarEventosOrganizadorAsync(int idUsuario);
+        Task<InfoEventoEntity> CancelarEventoAsync(int idEvento, int idUsuario);
     }
 }

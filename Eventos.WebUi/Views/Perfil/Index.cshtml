@@ -51,6 +51,9 @@
                                 <label>Categoria:</label>
                                 <img class="categoria-imnagem" src="~/img/categorias/@evento.CaminhoImagem">
                             </div>
+                            <div>
+                                <input class="CancelarParticipacao" type="button" value="Cancelar Participação" onclick="location.href='@Url.Action("CancelarParticipacao", "Evento", new{ usuario = @Model.Usuario.Id, idEvento = @evento.Id})'" />
+                            </div>
                         </div>
                     </div>
                 }
@@ -80,6 +83,9 @@
                             <div class="divCategoria">
                                 <label>Categoria:</label>
                                 <img class="categoria-imnagem" src="~/img/categorias/@evento.CaminhoImagem">
+                            </div>
+                            <div>
+                                <input class="CancelarEvento" type="button" value="Cancelar evento" onclick="location.href='@Url.Action("CancelarEvento", "Evento", new{usuario = @Model.Usuario.Id, idEvento = @evento.Id})'" />
                             </div>
                         </div>
                     </div>

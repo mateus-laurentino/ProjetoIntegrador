@@ -121,3 +121,18 @@
 .button-return-home-logout input{
     margin: 5px;
 }
+
+.CancelarParticipacao, .CancelarEvento{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-color: red;
+    margin-top: 1rem;
+    border: 2px solid white;
+    color: white;
+}
+
+.CancelarParticipacao:hover, .CancelarEvento:hover{
+    background-color: rgb(255, 95, 95);
+    cursor: pointer;
+}
